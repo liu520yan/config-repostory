@@ -1,0 +1,18 @@
+server:
+  port: 8881
+zuul:
+  routes:
+    resources:
+      path: /resources/**
+      url: http://192.168.0.1:9090/
+
+      #忽略的敏感信息
+      sensitive-headers:
+      custom-sensitive-headers: true
+spring:
+  application:
+    name: gateway
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.102:1001/eureka/
